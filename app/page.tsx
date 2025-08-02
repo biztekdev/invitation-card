@@ -264,235 +264,341 @@ export default function InvitationPage() {
                 </button>
               )}
               {showForm && (
-                <form className="join-form show-form" onSubmit={handleFormSubmit}>
+                <form className="join-form show-form" onSubmit={handleFormSubmit} ref={formRef} style={{
+                  width: '100%',
+                  height: '100%',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  justifyContent: 'center',
+                  background: 'linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%)',
+                  borderRadius: '3px',
+                  padding: '4px',
+                  border: '1px solid rgba(255,255,255,0.2)',
+                  boxShadow: '0 1px 4px rgba(0,0,0,0.1)'
+                }}>
                   <input
                     type="text"
                     name="fullName"
                     placeholder="Full Name"
                     required
                     disabled={isSubmitting}
-                    style={{ width: '100%', height: '13px', fontSize: '0.55rem', padding: '0 2px', marginBottom: '1px', borderRadius: '1px', border: '1px solid #ccc', boxSizing: 'border-box' }}
+                    style={{
+                      width: '100%',
+                      height: '10px',
+                      fontSize: '0.35rem',
+                      fontFamily: '"Quicksand", sans-serif',
+                      padding: '1px 2px',
+                      margin: '0',
+                      borderRadius: '1px',
+                      border: '1px solid rgba(102, 126, 234, 0.3)',
+                      boxSizing: 'border-box',
+                      background: 'linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.9) 100%)',
+                      color: '#494b40',
+                      outline: 'none',
+                      transition: 'all 0.3s ease',
+                      boxShadow: '0 1px 2px rgba(0,0,0,0.1), inset 0 1px 1px rgba(255,255,255,0.8)',
+                      marginBottom: '1px'
+                    }}
                   />
+                  
                   <input
                     type="email"
                     name="email"
-                    placeholder="Email"
+                    placeholder="Email Address"
                     required
                     disabled={isSubmitting}
-                    style={{ width: '100%', height: '13px', fontSize: '0.55rem', padding: '0 2px', marginBottom: '1px', borderRadius: '1px', border: '1px solid #ccc', boxSizing: 'border-box' }}
+                    style={{
+                      width: '100%',
+                      height: '10px',
+                      fontSize: '0.35rem',
+                      fontFamily: '"Quicksand", sans-serif',
+                      padding: '1px 2px',
+                      margin: '0',
+                      borderRadius: '1px',
+                      border: '1px solid rgba(102, 126, 234, 0.3)',
+                      boxSizing: 'border-box',
+                      background: 'linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.9) 100%)',
+                      color: '#494b40',
+                      outline: 'none',
+                      transition: 'all 0.3s ease',
+                      boxShadow: '0 1px 2px rgba(0,0,0,0.1), inset 0 1px 1px rgba(255,255,255,0.8)',
+                      marginBottom: '1px'
+                    }}
                   />
+                  
                   <input
                     type="tel"
                     name="phone"
                     placeholder="Phone Number"
                     required
                     disabled={isSubmitting}
-                    style={{ width: '100%', height: '13px', fontSize: '0.55rem', padding: '0 2px', marginBottom: '1px', borderRadius: '1px', border: '1px solid #ccc', boxSizing: 'border-box' }}
+                    style={{
+                      width: '100%',
+                      height: '10px',
+                      fontSize: '0.35rem',
+                      fontFamily: '"Quicksand", sans-serif',
+                      padding: '1px 2px',
+                      margin: '0',
+                      borderRadius: '1px',
+                      border: '1px solid rgba(102, 126, 234, 0.3)',
+                      boxSizing: 'border-box',
+                      background: 'linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.9) 100%)',
+                      color: '#494b40',
+                      outline: 'none',
+                      transition: 'all 0.3s ease',
+                      boxShadow: '0 1px 2px rgba(0,0,0,0.1), inset 0 1px 1px rgba(255,255,255,0.8)',
+                      marginBottom: '1px'
+                    }}
                   />
-                  <style>{`
-                    .join-form input::placeholder {
-                      font-size: 0.55rem;
-                      color: #888;
-                      opacity: 1;
-                    }
-                    .join-form input:disabled {
-                      background-color: #f5f5f5;
-                      cursor: not-allowed;
-                    }
-                  `}</style>
+                  
                   <button 
                     type="submit" 
                     className="submit-btn"
                     disabled={isSubmitting}
                     ref={submitBtnRef}
+                    style={{
+                      margin: '0',
+                      padding: '1px 4px',
+                      width: '100%',
+                      fontSize: '0.35rem',
+                      fontFamily: '"Quicksand", sans-serif',
+                      fontWeight: '600',
+                      background: 'linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%)',
+                      color: 'white',
+                      border: 'none',
+                      borderRadius: '1px',
+                      cursor: isSubmitting ? 'not-allowed' : 'pointer',
+                      transition: 'all 0.3s ease',
+                      boxShadow: '0 1px 3px rgba(102, 126, 234, 0.4), inset 0 1px 1px rgba(255,255,255,0.3)',
+                      outline: 'none',
+                      opacity: isSubmitting ? 0.7 : 1,
+                      textShadow: '0 1px 1px rgba(0,0,0,0.3)'
+                    }}
                   >
-                    {isSubmitting ? "Submitting..." : "Submit"}
+                    {isSubmitting ? "Sending..." : "Send RSVP"}
                   </button>
-                  {formSubmitted && (
-                    <div className="success-overlay" style={{
-                      position: 'absolute',
-                      top: '50%',
-                      left: '50%',
-                      transform: 'translate(-50%, -50%)',
-                      background: 'rgba(0, 0, 0, 0.9)',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      zIndex: 10000,
-                      animation: 'fadeIn 0.5s ease-out',
-                      borderRadius: '10px',
-                      padding: '15px'
-                    }}>
-                      <div className="success-card" style={{
-                        background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
-                        borderRadius: '15px',
-                        padding: '20px',
-                        textAlign: 'center',
-                        color: 'white',
-                        boxShadow: '0 10px 20px rgba(0,0,0,0.3)',
-                        position: 'relative',
-                        overflow: 'hidden',
-                        animation: 'slideInUp 0.6s ease-out',
-                        minWidth: '200px',
-                        maxWidth: '250px'
-                      }}>
-                        {/* Floating Food Emojis */}
-                        <div className="floating-food" style={{
-                          position: 'absolute',
-                          top: '5px',
-                          left: '10px',
-                          fontSize: '16px',
-                          animation: 'float 3s ease-in-out infinite'
-                        }}>🍕</div>
-                        <div className="floating-food" style={{
-                          position: 'absolute',
-                          top: '8px',
-                          right: '15px',
-                          fontSize: '14px',
-                          animation: 'float 3s ease-in-out infinite 0.5s'
-                        }}>🍝</div>
-                        <div className="floating-food" style={{
-                          position: 'absolute',
-                          bottom: '8px',
-                          left: '10px',
-                          fontSize: '12px',
-                          animation: 'float 3s ease-in-out infinite 1s'
-                        }}>🍷</div>
-                        <div className="floating-food" style={{
-                          position: 'absolute',
-                          bottom: '10px',
-                          right: '12px',
-                          fontSize: '15px',
-                          animation: 'float 3s ease-in-out infinite 1.5s'
-                        }}>🍰</div>
-
-                        {/* Sparkles */}
-                        <div className="sparkle" style={{
-                          position: 'absolute',
-                          top: '15%',
-                          left: '8%',
-                          fontSize: '8px',
-                          animation: 'sparkle 2s ease-in-out infinite'
-                        }}>✨</div>
-                        <div className="sparkle" style={{
-                          position: 'absolute',
-                          top: '25%',
-                          right: '12%',
-                          fontSize: '7px',
-                          animation: 'sparkle 2s ease-in-out infinite 0.7s'
-                        }}>⭐</div>
-                        <div className="sparkle" style={{
-                          position: 'absolute',
-                          bottom: '25%',
-                          left: '15%',
-                          fontSize: '9px',
-                          animation: 'sparkle 2s ease-in-out infinite 1.3s'
-                        }}>💫</div>
-
-                        {/* Main Content */}
-                        <div style={{
-                          fontSize: '24px',
-                          marginBottom: '8px',
-                          animation: 'bounce 1s ease-in-out'
-                        }}>{isAlreadyInvited ? '🎊' : '🎉'}</div>
-                        
-                        <h2 style={{
-                          fontSize: '0.9rem',
-                          margin: '0 0 6px 0',
-                          fontWeight: 'bold',
-                          textShadow: '0 2px 4px rgba(0,0,0,0.3)'
-                        }}>
-                          {isAlreadyInvited ? 'Welcome Back! 🎊' : 'You\'re Invited! 🎊'}
-                        </h2>
-                        
-                        <p style={{
-                          fontSize: '0.65rem',
-                          margin: '0 0 8px 0',
-                          opacity: 0.9,
-                          lineHeight: '1.2'
-                        }}>
-                          {isAlreadyInvited 
-                            ? (
-                              <>
-                                You're already on our guest list!<br/>
-                                We're excited to see you again! 🍽️
-                              </>
-                            )
-                            : (
-                              <>
-                                Thank you for joining us!<br/>
-                                We can't wait to share this special dinner with you! 🍽️
-                              </>
-                            )
-                          }
-                        </p>
-                        
-                        <div style={{
-                          fontSize: '0.6rem',
-                          opacity: 0.8,
-                          fontStyle: 'italic'
-                        }}>
-                          See you at Sugar Land! 🌟
-                        </div>
-
-                        {/* Progress Bar */}
-                        <div style={{
-                          width: '100%',
-                          height: '3px',
-                          background: 'rgba(255,255,255,0.3)',
-                          borderRadius: '2px',
-                          marginTop: '12px',
-                          overflow: 'hidden'
-                        }}>
-                          <div style={{
-                            width: '100%',
-                            height: '100%',
-                            background: 'linear-gradient(90deg, #ffd700, #ffed4e)',
-                            borderRadius: '2px',
-                            animation: 'progress 4s linear'
-                          }}></div>
-                        </div>
-                      </div>
-                    </div>
-                  )}
+                  
                   <style>{`
-                    @keyframes fadeIn {
-                      from { opacity: 0; }
-                      to { opacity: 1; }
+                    .join-form input::placeholder {
+                      font-size: 0.35rem;
+                      color: #888;
+                      opacity: 1;
+                      font-family: "Quicksand", sans-serif;
+                      font-style: italic;
                     }
-                    
-                    @keyframes slideInUp {
-                      from { 
-                        opacity: 0; 
-                        transform: translateY(50px) scale(0.8); 
-                      }
-                      to { 
-                        opacity: 1; 
-                        transform: translateY(0) scale(1); 
-                      }
+                    .join-form input:disabled {
+                      background: linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 100%);
+                      cursor: not-allowed;
+                      opacity: 0.6;
+                      border-color: #ccc;
                     }
-                    
-                    @keyframes float {
-                      0%, 100% { transform: translateY(0px) rotate(0deg); }
-                      50% { transform: translateY(-10px) rotate(5deg); }
+                    .join-form input:focus {
+                      border-color: #667eea;
+                      box-shadow: 0 0 0 1px rgba(102, 126, 234, 0.3), 0 1px 2px rgba(0,0,0,0.1), inset 0 1px 1px rgba(255,255,255,0.8);
+                      transform: translateY(-1px);
                     }
-                    
-                    @keyframes sparkle {
-                      0%, 100% { opacity: 0; transform: scale(0) rotate(0deg); }
-                      50% { opacity: 1; transform: scale(1) rotate(180deg); }
+                    .join-form input:hover:not(:disabled) {
+                      border-color: #764ba2;
+                      box-shadow: 0 1px 3px rgba(0,0,0,0.15), inset 0 1px 1px rgba(255,255,255,0.8);
+                      transform: translateY(-1px);
                     }
-                    
-                    @keyframes bounce {
-                      0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-                      40% { transform: translateY(-10px); }
-                      60% { transform: translateY(-5px); }
+                    .submit-btn:hover:not(:disabled) {
+                      transform: translateY(-1px);
+                      box-shadow: 0 2px 4px rgba(102, 126, 234, 0.5), inset 0 1px 1px rgba(255,255,255,0.3);
+                      background: linear-gradient(135deg, #5a6fd8 0%, #6a4190 50%, #e085e8 100%);
                     }
-                    
-                    @keyframes progress {
-                      from { width: 0%; }
-                      to { width: 100%; }
+                    .submit-btn:active:not(:disabled) {
+                      transform: translateY(0);
+                      box-shadow: 0 1px 2px rgba(102, 126, 234, 0.4), inset 0 1px 1px rgba(255,255,255,0.3);
                     }
                   `}</style>
+                   
+                   {formSubmitted && (
+                     <div className="success-overlay" style={{
+                       position: 'absolute',
+                       top: '50%',
+                       left: '50%',
+                       transform: 'translate(-50%, -50%)',
+                       background: 'rgba(0, 0, 0, 0.9)',
+                       display: 'flex',
+                       alignItems: 'center',
+                       justifyContent: 'center',
+                       zIndex: 10000,
+                       animation: 'fadeIn 0.5s ease-out',
+                       borderRadius: '10px',
+                       padding: '15px'
+                     }}>
+                       <div className="success-card" style={{
+                         background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+                         borderRadius: '15px',
+                         padding: '20px',
+                         textAlign: 'center',
+                         color: 'white',
+                         boxShadow: '0 10px 20px rgba(0,0,0,0.3)',
+                         position: 'relative',
+                         overflow: 'hidden',
+                         animation: 'slideInUp 0.6s ease-out',
+                         minWidth: '200px',
+                         maxWidth: '250px'
+                       }}>
+                         {/* Floating Food Emojis */}
+                         <div className="floating-food" style={{
+                           position: 'absolute',
+                           top: '5px',
+                           left: '10px',
+                           fontSize: '16px',
+                           animation: 'float 3s ease-in-out infinite'
+                         }}>🍕</div>
+                         <div className="floating-food" style={{
+                           position: 'absolute',
+                           top: '8px',
+                           right: '15px',
+                           fontSize: '14px',
+                           animation: 'float 3s ease-in-out infinite 0.5s'
+                         }}>🍝</div>
+                         <div className="floating-food" style={{
+                           position: 'absolute',
+                           bottom: '8px',
+                           left: '10px',
+                           fontSize: '12px',
+                           animation: 'float 3s ease-in-out infinite 1s'
+                         }}>🍷</div>
+                         <div className="floating-food" style={{
+                           position: 'absolute',
+                           bottom: '10px',
+                           right: '12px',
+                           fontSize: '15px',
+                           animation: 'float 3s ease-in-out infinite 1.5s'
+                         }}>🍰</div>
+
+                         {/* Sparkles */}
+                         <div className="sparkle" style={{
+                           position: 'absolute',
+                           top: '15%',
+                           left: '8%',
+                           fontSize: '8px',
+                           animation: 'sparkle 2s ease-in-out infinite'
+                         }}>✨</div>
+                         <div className="sparkle" style={{
+                           position: 'absolute',
+                           top: '25%',
+                           right: '12%',
+                           fontSize: '7px',
+                           animation: 'sparkle 2s ease-in-out infinite 0.7s'
+                         }}>⭐</div>
+                         <div className="sparkle" style={{
+                           position: 'absolute',
+                           bottom: '25%',
+                           left: '15%',
+                           fontSize: '9px',
+                           animation: 'sparkle 2s ease-in-out infinite 1.3s'
+                         }}>💫</div>
+
+                         {/* Main Content */}
+                         <div style={{
+                           fontSize: '24px',
+                           marginBottom: '8px',
+                           animation: 'bounce 1s ease-in-out'
+                         }}>{isAlreadyInvited ? '🎊' : '🎉'}</div>
+                         
+                         <h2 style={{
+                           fontSize: '0.9rem',
+                           margin: '0 0 6px 0',
+                           fontWeight: 'bold',
+                           textShadow: '0 2px 4px rgba(0,0,0,0.3)'
+                         }}>
+                           {isAlreadyInvited ? 'Welcome Back! 🎊' : 'You\'re Invited! 🎊'}
+                         </h2>
+                         
+                         <p style={{
+                           fontSize: '0.65rem',
+                           margin: '0 0 8px 0',
+                           opacity: 0.9,
+                           lineHeight: '1.2'
+                         }}>
+                           {isAlreadyInvited 
+                             ? (
+                               <>
+                                 You're already on our guest list!<br/>
+                                 We're excited to see you again! 🍽️
+                               </>
+                             )
+                             : (
+                               <>
+                                 Thank you for joining us!<br/>
+                                 We can't wait to share this special dinner with you! 🍽️
+                               </>
+                             )
+                           }
+                         </p>
+                         
+                         <div style={{
+                           fontSize: '0.6rem',
+                           opacity: 0.8,
+                           fontStyle: 'italic'
+                         }}>
+                           See you at Sugar Land! 🌟
+                         </div>
+
+                         {/* Progress Bar */}
+                         <div style={{
+                           width: '100%',
+                           height: '3px',
+                           background: 'rgba(255,255,255,0.3)',
+                           borderRadius: '2px',
+                           marginTop: '12px',
+                           overflow: 'hidden'
+                         }}>
+                           <div style={{
+                             width: '100%',
+                             height: '100%',
+                             background: 'linear-gradient(90deg, #ffd700, #ffed4e)',
+                             borderRadius: '2px',
+                             animation: 'progress 4s linear'
+                           }}></div>
+                         </div>
+                       </div>
+                     </div>
+                   )}
+                   
+                   <style>{`
+                     @keyframes fadeIn {
+                       from { opacity: 0; }
+                       to { opacity: 1; }
+                     }
+                     
+                     @keyframes slideInUp {
+                       from { 
+                         opacity: 0; 
+                         transform: translateY(50px) scale(0.8); 
+                       }
+                       to { 
+                         opacity: 1; 
+                         transform: translateY(0) scale(1); 
+                       }
+                     }
+                     
+                     @keyframes float {
+                       0%, 100% { transform: translateY(0px) rotate(0deg); }
+                       50% { transform: translateY(-10px) rotate(5deg); }
+                     }
+                     
+                     @keyframes sparkle {
+                       0%, 100% { opacity: 0; transform: scale(0) rotate(0deg); }
+                       50% { opacity: 1; transform: scale(1) rotate(180deg); }
+                     }
+                     
+                     @keyframes bounce {
+                       0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+                       40% { transform: translateY(-10px); }
+                       60% { transform: translateY(-5px); }
+                     }
+                     
+                     @keyframes progress {
+                       from { width: 0%; }
+                       to { width: 100%; }
+                     }
+                   `}</style>
                 </form>
               )}
             </div>
