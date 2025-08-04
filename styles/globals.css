@@ -15,7 +15,7 @@
   /* Responsive sizing variables */
   --envelope-width: min(220px, 50vw);
   --envelope-height: min(120px, 25vh);
-  --paper-width: 90%;
+  --paper-width: 95%;
   --paper-height: 90%;
   --input-height: min(12px, 2.5vh);
   --input-font-size: min(0.35rem, 1.8vw);
@@ -43,11 +43,11 @@
   :root {
     --envelope-width: min(180px, 45vw);
     --envelope-height: min(100px, 22vh);
-    --paper-width: 60%;
+    --paper-width: 92%;
     --paper-height: min(65%, 60vh);
     --input-height: min(8px, 1.8vh);
-    --input-font-size: min(0.2rem, 1vw);
-    --button-font-size: min(0.2rem, 1vw);
+    --input-font-size: min(0.25rem, 1.3vw);
+    --button-font-size: min(0.25rem, 1.3vw);
     --title-font-size: min(0.5rem, 2.5vw);
     --content-font-size: min(0.22rem, 1.1vw);
   }
@@ -94,7 +94,7 @@
   :root {
     --envelope-width: min(150px, 40vw);
     --envelope-height: min(85px, 20vh);
-    --paper-width: 50%;
+    --paper-width: 90%;
     --paper-height: min(55%, 50vh);
     --input-height: min(6px, 1.5vh);
     --input-font-size: min(0.15rem, 0.8vw);
@@ -145,7 +145,7 @@
   :root {
     --envelope-width: min(120px, 35vw);
     --envelope-height: min(70px, 18vh);
-    --paper-width: 40%;
+    --paper-width: 88%;
     --paper-height: min(45%, 40vh);
     --input-height: min(5px, 1.3vh);
     --input-font-size: min(0.12rem, 0.6vw);
