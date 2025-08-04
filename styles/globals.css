@@ -1,8 +1,8 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/* Responsive base styles */
 :root {
   --lightBlue: #a7b7c0;
   --lightGreen: #808375;
@@ -11,6 +11,185 @@
   --darkerGreen: #494b40;
   --textGreen: #7f8372;
   --almostWhite: #eeebe6;
+  
+  /* Responsive sizing variables */
+  --envelope-width: min(220px, 50vw);
+  --envelope-height: min(120px, 25vh);
+  --paper-width: 90%;
+  --paper-height: 90%;
+  --input-height: min(12px, 2.5vh);
+  --input-font-size: min(0.35rem, 1.8vw);
+  --button-font-size: min(0.35rem, 1.8vw);
+  --title-font-size: min(0.8rem, 4vw);
+  --content-font-size: min(0.45rem, 2.2vw);
+}
+
+@media screen and (max-width: 575px) {
+    .responsive1{
+        font-size: 10px;
+        margin-bottom: 0px !important;
+    }
+    .join-btn {
+        font-size: 3px !important;
+        font-weight: bold !important;
+        width: 100px;
+        max-width: 100px !important;
+        max-height: 70px !important;
+    }
+}
+
+/* Mobile-specific adjustments */
+@media (max-width: 768px) {
+  :root {
+    --envelope-width: min(180px, 45vw);
+    --envelope-height: min(100px, 22vh);
+    --paper-width: 60%;
+    --paper-height: min(65%, 60vh);
+    --input-height: min(8px, 1.8vh);
+    --input-font-size: min(0.2rem, 1vw);
+    --button-font-size: min(0.2rem, 1vw);
+    --title-font-size: min(0.5rem, 2.5vw);
+    --content-font-size: min(0.22rem, 1.1vw);
+  }
+  
+  .join-btn {
+    padding: calc(var(--envelope-height) * 0.01) calc(var(--envelope-width) * 0.02);
+    font-size: min(6px, 1.5vw);
+    max-width: 50%;
+    width: auto;
+  }
+  
+  .title {
+    margin-bottom: calc(var(--envelope-height) * 0.02);
+    margin-top: calc(var(--envelope-height) * 0.05);
+  }
+  
+  .mb-1 {
+    margin-bottom: calc(var(--envelope-height) * 0.025);
+  }
+  
+  .container {
+    padding: calc(var(--envelope-height) * 0.025) calc(var(--envelope-width) * 0.04);
+    margin: calc(var(--envelope-height) * 0.025);
+  }
+  
+  .join-form input {
+    font-size: min(0.18rem, 0.9vw);
+    height: min(8px, 1.8vh);
+    padding: calc(var(--envelope-height) * 0.015) calc(var(--envelope-width) * 0.025);
+  }
+  
+  .join-form input::placeholder {
+    font-size: min(0.16rem, 0.8vw);
+  }
+  
+  .submit-btn {
+    font-size: min(0.18rem, 0.9vw);
+    height: min(9px, 2vh);
+    padding: calc(var(--envelope-height) * 0.015) calc(var(--envelope-width) * 0.025);
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --envelope-width: min(150px, 40vw);
+    --envelope-height: min(85px, 20vh);
+    --paper-width: 50%;
+    --paper-height: min(55%, 50vh);
+    --input-height: min(6px, 1.5vh);
+    --input-font-size: min(0.15rem, 0.8vw);
+    --button-font-size: min(0.15rem, 0.8vw);
+    --title-font-size: min(0.4rem, 2vw);
+    --content-font-size: min(0.18rem, 0.9vw);
+  }
+  
+  .join-btn {
+    padding: calc(var(--envelope-height) * 0.008) calc(var(--envelope-width) * 0.015);
+    font-size: min(5px, 1.2vw);
+    max-width: 40%;
+    width: auto;
+  }
+  
+  .title {
+    margin-bottom: calc(var(--envelope-height) * 0.015);
+    margin-top: calc(var(--envelope-height) * 0.04);
+  }
+  
+  .mb-1 {
+    margin-bottom: calc(var(--envelope-height) * 0.02);
+  }
+  
+  .container {
+    padding: calc(var(--envelope-height) * 0.02) calc(var(--envelope-width) * 0.03);
+    margin: calc(var(--envelope-height) * 0.02);
+  }
+  
+  .join-form input {
+    font-size: min(0.13rem, 0.7vw);
+    height: min(6px, 1.5vh);
+    padding: calc(var(--envelope-height) * 0.01) calc(var(--envelope-width) * 0.02);
+  }
+  
+  .join-form input::placeholder {
+    font-size: min(0.12rem, 0.6vw);
+  }
+  
+  .submit-btn {
+    font-size: min(0.13rem, 0.7vw);
+    height: min(7px, 1.7vh);
+    padding: calc(var(--envelope-height) * 0.01) calc(var(--envelope-width) * 0.02);
+  }
+}
+
+@media (max-width: 360px) {
+  :root {
+    --envelope-width: min(120px, 35vw);
+    --envelope-height: min(70px, 18vh);
+    --paper-width: 40%;
+    --paper-height: min(45%, 40vh);
+    --input-height: min(5px, 1.3vh);
+    --input-font-size: min(0.12rem, 0.6vw);
+    --button-font-size: min(0.12rem, 0.6vw);
+    --title-font-size: min(0.3rem, 1.5vw);
+    --content-font-size: min(0.15rem, 0.8vw);
+  }
+  
+  .join-btn {
+    padding: calc(var(--envelope-height) * 0.006) calc(var(--envelope-width) * 0.012);
+    font-size: min(4px, 1vw);
+    max-width: 35%;
+    width: auto;
+  }
+  
+  .title {
+    margin-bottom: calc(var(--envelope-height) * 0.01);
+    margin-top: calc(var(--envelope-height) * 0.03);
+  }
+  
+  .mb-1 {
+    margin-bottom: calc(var(--envelope-height) * 0.015);
+  }
+  
+  .container {
+    padding: calc(var(--envelope-height) * 0.015) calc(var(--envelope-width) * 0.025);
+    margin: calc(var(--envelope-height) * 0.015);
+  }
+  
+  .join-form input {
+    font-size: min(0.1rem, 0.5vw);
+    height: min(5px, 1.3vh);
+    padding: calc(var(--envelope-height) * 0.008) calc(var(--envelope-width) * 0.015);
+  }
+  
+  .join-form input::placeholder {
+    font-size: min(0.09rem, 0.45vw);
+  }
+  
+  .submit-btn {
+    font-size: min(0.1rem, 0.5vw);
+    height: min(6px, 1.4vh);
+    padding: calc(var(--envelope-height) * 0.008) calc(var(--envelope-width) * 0.015);
+  }
 }
 
 * {
@@ -21,6 +200,7 @@
 
 body {
   height: 100vh;
+  max-height: 100vh;
   background: 
     radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.3) 0%, transparent 50%),
     radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.3) 0%, transparent 50%),
@@ -115,8 +295,8 @@ body::after {
 }
 
 .animated-shape.shape1 {
-  width: 80px;
-  height: 80px;
+  width: min(80px, 15vw);
+  height: min(80px, 15vw);
   background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
   top: 10%;
   left: 10%;
@@ -125,8 +305,8 @@ body::after {
 }
 
 .animated-shape.shape2 {
-  width: 120px;
-  height: 120px;
+  width: min(120px, 20vw);
+  height: min(120px, 20vw);
   background: linear-gradient(45deg, #a8edea, #fed6e3);
   top: 20%;
   right: 15%;
@@ -135,8 +315,8 @@ body::after {
 }
 
 .animated-shape.shape3 {
-  width: 60px;
-  height: 60px;
+  width: min(60px, 12vw);
+  height: min(60px, 12vw);
   background: linear-gradient(45deg, #ffecd2, #fcb69f);
   bottom: 20%;
   left: 20%;
@@ -145,8 +325,8 @@ body::after {
 }
 
 .animated-shape.shape4 {
-  width: 100px;
-  height: 100px;
+  width: min(100px, 18vw);
+  height: min(100px, 18vw);
   background: linear-gradient(45deg, #a8caba, #5d4e75);
   bottom: 15%;
   right: 10%;
@@ -155,8 +335,8 @@ body::after {
 }
 
 .animated-shape.shape5 {
-  width: 70px;
-  height: 70px;
+  width: min(70px, 14vw);
+  height: min(70px, 14vw);
   background: linear-gradient(45deg, #ff9a9e, #fecfef);
   top: 50%;
   left: 5%;
@@ -165,8 +345,8 @@ body::after {
 }
 
 .animated-shape.shape6 {
-  width: 90px;
-  height: 90px;
+  width: min(90px, 16vw);
+  height: min(90px, 16vw);
   background: linear-gradient(45deg, #667eea, #764ba2);
   top: 60%;
   right: 5%;
@@ -197,7 +377,7 @@ body::after {
 .sparkle {
   position: absolute;
   color: white;
-  font-size: 12px;
+  font-size: min(12px, 2.5vw);
   animation: sparkleMove 3s ease-in-out infinite;
   pointer-events: none;
   z-index: 3;
@@ -283,72 +463,72 @@ body::after {
 }
 
 .particle-1 {
-  width: 4px;
-  height: 4px;
+  width: min(4px, 1vw);
+  height: min(4px, 1vw);
   left: 10%;
   animation-delay: 0s;
   background: radial-gradient(circle, rgba(255, 255, 255, 0.8), transparent);
 }
 
 .particle-2 {
-  width: 6px;
-  height: 6px;
+  width: min(6px, 1.5vw);
+  height: min(6px, 1.5vw);
   left: 20%;
   animation-delay: 2s;
   background: radial-gradient(circle, rgba(255, 182, 193, 0.8), transparent);
 }
 
 .particle-3 {
-  width: 3px;
-  height: 3px;
+  width: min(3px, 0.8vw);
+  height: min(3px, 0.8vw);
   left: 30%;
   animation-delay: 4s;
   background: radial-gradient(circle, rgba(173, 216, 230, 0.8), transparent);
 }
 
 .particle-4 {
-  width: 5px;
-  height: 5px;
+  width: min(5px, 1.2vw);
+  height: min(5px, 1.2vw);
   left: 40%;
   animation-delay: 6s;
   background: radial-gradient(circle, rgba(255, 218, 185, 0.8), transparent);
 }
 
 .particle-5 {
-  width: 4px;
-  height: 4px;
+  width: min(4px, 1vw);
+  height: min(4px, 1vw);
   left: 50%;
   animation-delay: 8s;
   background: radial-gradient(circle, rgba(221, 160, 221, 0.8), transparent);
 }
 
 .particle-6 {
-  width: 6px;
-  height: 6px;
+  width: min(6px, 1.5vw);
+  height: min(6px, 1.5vw);
   left: 60%;
   animation-delay: 10s;
   background: radial-gradient(circle, rgba(255, 255, 224, 0.8), transparent);
 }
 
 .particle-7 {
-  width: 3px;
-  height: 3px;
+  width: min(3px, 0.8vw);
+  height: min(3px, 0.8vw);
   left: 70%;
   animation-delay: 12s;
   background: radial-gradient(circle, rgba(176, 224, 230, 0.8), transparent);
 }
 
 .particle-8 {
-  width: 5px;
-  height: 5px;
+  width: min(5px, 1.2vw);
+  height: min(5px, 1.2vw);
   left: 80%;
   animation-delay: 14s;
   background: radial-gradient(circle, rgba(255, 192, 203, 0.8), transparent);
 }
 
 .particle-9 {
-  width: 4px;
-  height: 4px;
+  width: min(4px, 1vw);
+  height: min(4px, 1vw);
   left: 90%;
   animation-delay: 16s;
   background: radial-gradient(circle, rgba(230, 230, 250, 0.8), transparent);
@@ -410,9 +590,10 @@ body::after {
   }
 }
 
+/* Responsive envelope */
 .envelope {
-  width: 220px;
-  height: 120px;
+  width: var(--envelope-width);
+  height: var(--envelope-height);
   position: relative;
   background: var(--darkerGreen);
   cursor: pointer;
@@ -420,6 +601,7 @@ body::after {
   border-radius: 2px;
   transition: transform 0.3s ease;
   z-index: 10;
+  max-height: 90vh;
 }
 
 .envelope:hover {
@@ -427,18 +609,19 @@ body::after {
   box-shadow: 0px 12px 24px rgba(0, 0, 0, 0.4), 0px 8px 12px rgba(0, 0, 0, 0.2);
 }
 
+/* Responsive envelope parts */
 .top,
 .bottom {
-  border-left: 110px solid transparent;
-  border-right: 110px solid transparent;
+  border-left: calc(var(--envelope-width) / 2) solid transparent;
+  border-right: calc(var(--envelope-width) / 2) solid transparent;
   width: 0;
   height: 0;
   position: relative;
 }
 
 .top {
-  border-bottom: 80px solid var(--lightGreen);
-  top: -80px;
+  border-bottom: calc(var(--envelope-height) * 0.67) solid var(--lightGreen);
+  top: calc(var(--envelope-height) * -0.67);
   transform-origin: bottom;
   z-index: 3;
   transition: all 0.8s ease;
@@ -446,8 +629,8 @@ body::after {
 }
 
 .bottom {
-  border-bottom: 80px solid var(--darkGreen);
-  top: -40px;
+  border-bottom: calc(var(--envelope-height) * 0.67) solid var(--darkGreen);
+  top: calc(var(--envelope-height) * -0.33);
   z-index: 4;
 }
 
@@ -455,20 +638,20 @@ body::after {
 .right {
   width: 0;
   height: 0;
-  border-top: 60px solid transparent;
-  border-bottom: 60px solid transparent;
+  border-top: calc(var(--envelope-height) * 0.5) solid transparent;
+  border-bottom: calc(var(--envelope-height) * 0.5) solid transparent;
   top: 0;
   z-index: 4;
 }
 
 .left {
-  border-left: 110px solid var(--mediumGreen);
+  border-left: calc(var(--envelope-width) / 2) solid var(--mediumGreen);
   position: absolute;
   left: 0;
 }
 
 .right {
-  border-right: 110px solid var(--mediumGreen);
+  border-right: calc(var(--envelope-width) / 2) solid var(--mediumGreen);
   position: absolute;
   right: 0;
 }
@@ -483,11 +666,12 @@ body::after {
   top: -100%;
 }
 
+/* Responsive paper */
 .paper {
-  width: 90%;
-  height: 90%;
+  width: var(--paper-width);
+  height: var(--paper-height);
   background: var(--almostWhite);
-  margin: 6px auto 0;
+  margin: calc(var(--envelope-height) * 0.05) auto 0;
   transition: all 0.5s ease-out;
   position: absolute;
   left: 50%;
@@ -496,8 +680,37 @@ body::after {
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
-  overflow: hidden;
+  overflow: visible;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  max-height: 80vh;
+}
+
+/* Increase paper height when form is shown */
+.paper.form-active {
+  height: calc(var(--paper-height));
+  max-height: 85vh;
+}
+
+/* Mobile-specific paper height adjustments for form */
+@media (max-width: 768px) {
+  .paper.form-active {
+    height: calc(var(--paper-height) * 1.5);
+    max-height: 80vh;
+  }
+}
+
+@media (max-width: 480px) {
+  .paper.form-active {
+    height: calc(var(--paper-height) * 1.75);
+    max-height: 75vh;
+  }
+}
+
+@media (max-width: 360px) {
+  .paper.form-active {
+    height: calc(var(--paper-height) * 1.7);
+    max-height: 70vh;
+  }
 }
 
 /* Text animation for paper content - only when envelope is open */
@@ -547,15 +760,16 @@ body::after {
   transition-duration: 2s;
 }
 
-/* Main invitation name (Haroon Elahi) uses Dancing Script, Dinner Invitation uses Cormorant Garamond */
+/* Responsive text */
 .title {
-  font-size: 0.6rem;
-  margin-bottom: 2px;
-  margin-top: 10px;
+  font-size: var(--title-font-size);
+  margin-bottom: calc(var(--envelope-height) * 0.05);
+  margin-top: calc(var(--envelope-height) * 0.12);
   text-align: center;
   font-weight: bold;
   font-family: "Dancing Script", cursive;
   letter-spacing: 0.5px;
+  line-height: 1.2;
 }
 
 .dinner-heading {
@@ -565,25 +779,28 @@ body::after {
 }
 
 .content {
-  font-size: 0.3rem;
+  font-size: var(--content-font-size);
   text-align: center;
-  line-height: 1.4;
+  line-height: 1.5;
+  margin-bottom: calc(var(--envelope-height) * 0.03);
 }
 
 .mb-1 {
-  margin-bottom: 8px;
+  margin-bottom: calc(var(--envelope-height) * 0.12);
 }
 
+/* Responsive container */
 .container {
   border: solid 0.5px var(--textGreen);
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
-  padding: 5px 15px 5px 15px; /* extra bottom padding */
-  margin: 5px;
+  padding: calc(var(--envelope-height) * 0.03) calc(var(--envelope-width) * 0.05);
+  margin: calc(var(--envelope-height) * 0.03);
   height: 100%;
   background: rgba(255, 255, 255, 0.05);
   border-radius: 2px;
+  overflow: visible;
 }
 
 .flower {
@@ -597,73 +814,29 @@ body::after {
   left: -50px;
 }
 
-/* Instruction text */
+/* Responsive instruction text */
 .instruction {
   position: absolute;
-  bottom: 30px;
+  bottom: min(30px, 5vh);
   left: 50%;
   transform: translateX(-50%);
   color: rgba(255, 255, 255, 0.8);
-  font-size: 14px;
+  font-size: min(14px, 3vw);
   text-align: center;
   animation: pulse 2s infinite;
   z-index: 5;
 }
 
-@keyframes pulse {
-  0%,
-  100% {
-    opacity: 0.8;
-  }
-  50% {
-    opacity: 0.4;
-  }
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  .envelope {
-    width: 180px;
-    height: 100px;
-  }
-
-  .top {
-    border-left: 90px solid transparent;
-    border-right: 90px solid transparent;
-    border-bottom: 65px solid var(--lightGreen);
-    top: -65px;
-  }
-
-  .bottom {
-    border-left: 90px solid transparent;
-    border-right: 90px solid transparent;
-    border-bottom: 65px solid var(--darkGreen);
-    top: -35px;
-  }
-
-  .left {
-    border-left: 90px solid var(--mediumGreen);
-    border-top: 50px solid transparent;
-    border-bottom: 50px solid transparent;
-  }
-
-  .right {
-    border-right: 90px solid var(--mediumGreen);
-    border-top: 50px solid transparent;
-    border-bottom: 50px solid transparent;
-  }
-}
-
 /* Join Us button animation */
 .join-btn {
-  margin: 5px auto 4px auto;
-  padding: 5px 16px;
-  font-size: 12px;
+  margin: calc(var(--envelope-height) * 0.03) auto calc(var(--envelope-height) * 0.02) auto;
+  padding: calc(var(--envelope-height) * 0.025) calc(var(--envelope-width) * 0.05);
+  font-size: min(10px, 2vw);
   font-family: inherit;
   background: linear-gradient(90deg, #a18cd1 0%, #fbc2eb 100%);
   color: #494b40;
   border: none;
-  border-radius: 24px;
+  border-radius: 20px;
   box-shadow: 0 2px 8px #a18cd155;
   cursor: pointer;
   opacity: 0;
@@ -672,6 +845,7 @@ body::after {
   z-index: 20;
   outline: none;
   position: relative;
+  max-width: 80%;
 }
 
 .join-btn.show-btn {
@@ -704,12 +878,13 @@ body::after {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 3px;
-  margin-top: 2px;
+  gap: calc(var(--envelope-height) * 0.025);
+  margin-top: calc(var(--envelope-height) * 0.02);
   opacity: 0;
   transform: scale(0.92) translateY(10px);
   transition: opacity 0.5s, transform 0.5s;
   z-index: 30;
+  width: 100%;
 }
 
 .join-form.show-form {
@@ -717,46 +892,67 @@ body::after {
   transform: scale(1) translateY(0);
 }
 
+/* Responsive form inputs */
 .join-form input {
-  width: 90px;
-  padding: 1px 4px;
-  height: 16px;
-  border: 1px solid #a7b7c0;
-  border-radius: 8px;
-  font-size: 0.48rem;
+  width: 100%;
+  padding: calc(var(--envelope-height) * 0.02) calc(var(--envelope-width) * 0.03);
+  height: var(--input-height);
+  border: none;
+  border-radius: 12px;
+  font-size: var(--input-font-size);
   font-family: "Quicksand", Arial, sans-serif;
   outline: none;
-  transition: border 0.2s;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   box-sizing: border-box;
+  background: linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.9) 100%);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 
-/* Smaller placeholder font for join form inputs */
 .join-form input::placeholder {
-  font-size: 0.48rem;
-  color: #b0b0b0;
+  font-size: var(--input-font-size);
+  color: #999;
   opacity: 1;
+  font-family: "Quicksand", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  transition: all 0.3s ease;
 }
 
 .join-form input:focus {
-  border: 1.5px solid #a18cd1;
+  transform: scale(1.02);
 }
 
+.join-form input:hover:not(:disabled) {
+  transform: scale(1.01);
+}
+
+/* Responsive submit button */
 .submit-btn {
-  margin-top: 2px;
-  padding: 4px 6px;
-  width: 45px;
-  font-size: 0.3rem;
-  background: linear-gradient(90deg, #fbc2eb 0%, #a18cd1 100%);
-  color: #494b40;
+  margin-top: calc(var(--envelope-height) * 0.025);
+  padding: calc(var(--envelope-height) * 0.025) calc(var(--envelope-width) * 0.04);
+  width: 100%;
+  height: calc(var(--input-height) * 1.2);
+  font-size: var(--button-font-size);
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+  color: white;
   border: none;
-  border-radius: 18px;
+  border-radius: 12px;
   cursor: pointer;
-  transition: background 0.2s;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   font-family: "Quicksand", Arial, sans-serif;
+  font-weight: 600;
+  text-shadow: 0 1px 1px rgba(0,0,0,0.3);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.submit-btn:hover:not(:disabled) {
+  transform: scale(1.05);
 }
 
 .submit-btn:active {
-  background: #a18cd1;
+  transform: scale(0.98);
 }
 
 .form-success {
@@ -778,4 +974,4 @@ body::after {
   }
 }
 
-@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Cormorant+Garamond:wght@700&family=Quicksand:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Cormorant+Garamond:wght@700&family=Quicksand:wght@500&display=swap"); 
