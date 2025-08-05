@@ -15,7 +15,7 @@
   /* Responsive sizing variables */
   --envelope-width: min(220px, 50vw);
   --envelope-height: min(120px, 25vh);
-  --paper-width: 95%;
+  --paper-width: 90%;
   --paper-height: 90%;
   --input-height: min(12px, 2.5vh);
   --input-font-size: min(0.35rem, 1.8vw);
@@ -24,90 +24,28 @@
   --content-font-size: min(0.45rem, 2.2vw);
 }
 
-@media screen and (max-width: 575px) {
-    .responsive1{
-        font-size: 10px;
-        margin-bottom: 0px !important;
-    }
-    .join-btn {
-        font-size: 3px !important;
-        font-weight: bold !important;
-        width: 100px;
-        max-width: 100px !important;
-        max-height: 70px !important;
-    }
-}
-
 /* Mobile-specific adjustments */
 @media (max-width: 768px) {
   :root {
     --envelope-width: min(180px, 45vw);
     --envelope-height: min(100px, 22vh);
-    --paper-width: 92%;
-    --paper-height: min(65%, 60vh);
-    --input-height: min(8px, 1.8vh);
-    --input-font-size: min(0.25rem, 1.3vw);
-    --button-font-size: min(0.25rem, 1.3vw);
+    --paper-width: 70%;
+    --paper-height: min(75%, 70vh);
+    --input-height: min(10px, 2.2vh);
+    --input-font-size: min(0.25rem, 1.2vw);
+    --button-font-size: min(0.25rem, 1.2vw);
     --title-font-size: min(0.5rem, 2.5vw);
-    --content-font-size: min(0.22rem, 1.1vw);
+    --content-font-size: min(0.25rem, 1.3vw);
   }
-  
-  .join-btn {
-    padding: calc(var(--envelope-height) * 0.01) calc(var(--envelope-width) * 0.02);
-    font-size: min(6px, 1.5vw);
-    max-width: 50%;
-    width: auto;
-  }
-  
-  .title {
-    margin-bottom: calc(var(--envelope-height) * 0.02);
-    margin-top: calc(var(--envelope-height) * 0.05);
-  }
-  
-  .mb-1 {
-    margin-bottom: calc(var(--envelope-height) * 0.025);
-  }
-  
-  .container {
-    padding: calc(var(--envelope-height) * 0.025) calc(var(--envelope-width) * 0.04);
-    margin: calc(var(--envelope-height) * 0.025);
-  }
-  
-  .join-form input {
-    font-size: min(0.18rem, 0.9vw);
-    height: min(8px, 1.8vh);
-    padding: calc(var(--envelope-height) * 0.015) calc(var(--envelope-width) * 0.025);
-  }
-  
-  .join-form input::placeholder {
-    font-size: min(0.16rem, 0.8vw);
-  }
-  
-  .submit-btn {
-    font-size: min(0.18rem, 0.9vw);
-    height: min(9px, 2vh);
-    padding: calc(var(--envelope-height) * 0.015) calc(var(--envelope-width) * 0.025);
-  }
-}
 
-@media (max-width: 480px) {
-  :root {
-    --envelope-width: min(150px, 40vw);
-    --envelope-height: min(85px, 20vh);
-    --paper-width: 90%;
-    --paper-height: min(55%, 50vh);
-    --input-height: min(6px, 1.5vh);
-    --input-font-size: min(0.15rem, 0.8vw);
-    --button-font-size: min(0.15rem, 0.8vw);
-    --title-font-size: min(0.4rem, 2vw);
-    --content-font-size: min(0.18rem, 0.9vw);
+  .responsive1 {
+    margin-bottom: 5px !important;
   }
   
   .join-btn {
-    padding: calc(var(--envelope-height) * 0.008) calc(var(--envelope-width) * 0.015);
-    font-size: min(5px, 1.2vw);
-    max-width: 40%;
-    width: auto;
+    padding: calc(var(--envelope-height) * 0.005) calc(var(--envelope-width) * 0.01);
+    font-size: min(3px, 0.5vw);
+    max-width: 35%;
   }
   
   .title {
@@ -120,24 +58,50 @@
   }
   
   .container {
-    padding: calc(var(--envelope-height) * 0.02) calc(var(--envelope-width) * 0.03);
+    padding: calc(var(--envelope-height) * 0.015) calc(var(--envelope-width) * 0.02);
+    margin: calc(var(--envelope-height) * 0.015);
+  }
+  
+  .content {
+    margin-bottom: calc(var(--envelope-height) * 0.008);
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --envelope-width: min(150px, 40vw);
+    --envelope-height: min(85px, 20vh);
+    --paper-width: 65%;
+    --paper-height: min(70%, 65vh);
+    --input-height: min(8px, 2vh);
+    --input-font-size: min(0.2rem, 1vw);
+    --button-font-size: min(0.2rem, 1vw);
+    --title-font-size: min(0.4rem, 2vw);
+    --content-font-size: min(0.2rem, 1.1vw);
+  }
+  
+  .join-btn {
+    padding: calc(var(--envelope-height) * 0.004) calc(var(--envelope-width) * 0.008);
+    font-size: min(3px, 0.3vw);
+    max-width: 30%;
+  }
+  
+  .title {
+    margin-bottom: calc(var(--envelope-height) * 0.02);
+    margin-top: calc(var(--envelope-height) * 0.06);
+  }
+  
+  .mb-1 {
+    margin-bottom: calc(var(--envelope-height) * 0.03);
+  }
+  
+  .container {
+    padding: calc(var(--envelope-height) * 0.02) calc(var(--envelope-width) * 0.025);
     margin: calc(var(--envelope-height) * 0.02);
   }
   
-  .join-form input {
-    font-size: min(0.13rem, 0.7vw);
-    height: min(6px, 1.5vh);
-    padding: calc(var(--envelope-height) * 0.01) calc(var(--envelope-width) * 0.02);
-  }
-  
-  .join-form input::placeholder {
-    font-size: min(0.12rem, 0.6vw);
-  }
-  
-  .submit-btn {
-    font-size: min(0.13rem, 0.7vw);
-    height: min(7px, 1.7vh);
-    padding: calc(var(--envelope-height) * 0.01) calc(var(--envelope-width) * 0.02);
+  .content {
+    margin-bottom: calc(var(--envelope-height) * 0.006);
   }
 }
 
@@ -145,50 +109,37 @@
   :root {
     --envelope-width: min(120px, 35vw);
     --envelope-height: min(70px, 18vh);
-    --paper-width: 88%;
-    --paper-height: min(45%, 40vh);
-    --input-height: min(5px, 1.3vh);
-    --input-font-size: min(0.12rem, 0.6vw);
-    --button-font-size: min(0.12rem, 0.6vw);
+    --paper-width: 60%;
+    --paper-height: min(65%, 60vh);
+    --input-height: min(6px, 1.8vh);
+    --input-font-size: min(0.15rem, 0.8vw);
+    --button-font-size: min(0.15rem, 0.8vw);
     --title-font-size: min(0.3rem, 1.5vw);
-    --content-font-size: min(0.15rem, 0.8vw);
+    --content-font-size: min(0.15rem, 0.9vw);
   }
   
   .join-btn {
-    padding: calc(var(--envelope-height) * 0.006) calc(var(--envelope-width) * 0.012);
-    font-size: min(4px, 1vw);
-    max-width: 35%;
-    width: auto;
+    padding: calc(var(--envelope-height) * 0.003) calc(var(--envelope-width) * 0.006);
+    font-size: min(1px, 0.2vw);
+    max-width: 25%;
   }
   
   .title {
-    margin-bottom: calc(var(--envelope-height) * 0.01);
-    margin-top: calc(var(--envelope-height) * 0.03);
+    margin-bottom: calc(var(--envelope-height) * 0.025);
+    margin-top: calc(var(--envelope-height) * 0.08);
   }
   
   .mb-1 {
-    margin-bottom: calc(var(--envelope-height) * 0.015);
+    margin-bottom: calc(var(--envelope-height) * 0.04);
   }
   
   .container {
-    padding: calc(var(--envelope-height) * 0.015) calc(var(--envelope-width) * 0.025);
-    margin: calc(var(--envelope-height) * 0.015);
+    padding: calc(var(--envelope-height) * 0.025) calc(var(--envelope-width) * 0.03);
+    margin: calc(var(--envelope-height) * 0.025);
   }
   
-  .join-form input {
-    font-size: min(0.1rem, 0.5vw);
-    height: min(5px, 1.3vh);
-    padding: calc(var(--envelope-height) * 0.008) calc(var(--envelope-width) * 0.015);
-  }
-  
-  .join-form input::placeholder {
-    font-size: min(0.09rem, 0.45vw);
-  }
-  
-  .submit-btn {
-    font-size: min(0.1rem, 0.5vw);
-    height: min(6px, 1.4vh);
-    padding: calc(var(--envelope-height) * 0.008) calc(var(--envelope-width) * 0.015);
+  .content {
+    margin-bottom: calc(var(--envelope-height) * 0.005);
   }
 }
 
@@ -201,6 +152,9 @@
 body {
   height: 100vh;
   max-height: 100vh;
+  width: 100vw;
+  max-width: 100vw;
+  overflow-x: hidden !important;
   background: 
     radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.3) 0%, transparent 50%),
     radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.3) 0%, transparent 50%),
@@ -670,7 +624,7 @@ body::after {
 .paper {
   width: var(--paper-width);
   height: var(--paper-height);
-  background: var(--almostWhite);
+  background: #e8e8e0;
   margin: calc(var(--envelope-height) * 0.05) auto 0;
   transition: all 0.5s ease-out;
   position: absolute;
@@ -685,31 +639,39 @@ body::after {
   max-height: 80vh;
 }
 
-/* Increase paper height when form is shown */
+/* Increase paper height when form is open */
 .paper.form-active {
-  height: calc(var(--paper-height));
-  max-height: 85vh;
+  height: auto;
+  min-height: calc(var(--paper-height) * 1);
+  max-height: 75vh;
+  overflow-y: auto;
 }
 
 /* Mobile-specific paper height adjustments for form */
 @media (max-width: 768px) {
   .paper.form-active {
-    height: calc(var(--paper-height) * 1.5);
-    max-height: 80vh;
+    height: auto;
+    min-height: calc(var(--paper-height) * 1.1);
+    max-height: 60vh;
+    overflow-y: auto;
   }
 }
 
 @media (max-width: 480px) {
   .paper.form-active {
-    height: calc(var(--paper-height) * 1.75);
-    max-height: 75vh;
+    height: auto;
+    min-height: calc(var(--paper-height) * 1.1);
+    max-height: 65vh;
+    overflow-y: auto;
   }
 }
 
 @media (max-width: 360px) {
   .paper.form-active {
-    height: calc(var(--paper-height) * 1.7);
+    height: auto;
+    min-height: calc(var(--paper-height) * 1.1);
     max-height: 70vh;
+    overflow-y: auto;
   }
 }
 
@@ -831,7 +793,7 @@ body::after {
 .join-btn {
   margin: calc(var(--envelope-height) * 0.03) auto calc(var(--envelope-height) * 0.02) auto;
   padding: calc(var(--envelope-height) * 0.025) calc(var(--envelope-width) * 0.05);
-  font-size: min(10px, 2vw);
+  font-size: min(10px, 1vw);
   font-family: inherit;
   background: linear-gradient(90deg, #a18cd1 0%, #fbc2eb 100%);
   color: #494b40;
